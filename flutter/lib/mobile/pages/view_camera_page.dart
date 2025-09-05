@@ -39,11 +39,7 @@ void _disableAndroidSoftKeyboard({bool? isKeyboardVisible}) {
 
 class ViewCameraPage extends StatefulWidget {
   ViewCameraPage(
-      {Key? key,
-      required this.id,
-      this.password,
-      this.isSharedPassword,
-      this.forceRelay})
+      {Key? key, required this.id, this.password, this.isSharedPassword, this.forceRelay})
       : super(key: key);
 
   final String id;
@@ -583,7 +579,7 @@ void showOptions(
     BuildContext context, String id, OverlayDialogManager dialogManager) async {
   var displays = <Widget>[];
   final pi = gFFI.ffiModel.pi;
-  final image = gFFI.ffiModel.getConnectionImageText();
+  final image = gFFI.ffiModel.getConnectionImage();
   if (image != null) {
     displays.add(Padding(padding: const EdgeInsets.only(top: 8), child: image));
   }

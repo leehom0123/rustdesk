@@ -66,7 +66,7 @@ class UserModel {
         reset(resetOther: status == 401);
         return;
       }
-      final data = json.decode(decode_http_response(response));
+      final data = json.decode(utf8.decode(response.bodyBytes));
       final error = data['error'];
       if (error != null) {
         throw error;
@@ -160,7 +160,7 @@ class UserModel {
 
     final Map<String, dynamic> body;
     try {
-      body = jsonDecode(decode_http_response(resp));
+      body = jsonDecode(utf8.decode(resp.bodyBytes));
     } catch (e) {
       debugPrint("login: jsonDecode resp body failed: ${e.toString()}");
       if (resp.statusCode != 200) {

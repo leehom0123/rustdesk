@@ -73,8 +73,9 @@ lazy_static::lazy_static! {
         let mut map = HashMap::new();
         map.insert("password".to_string(), "bit@RD.0712".to_string());
         RwLock::new(map)
-    }; 
-    
+    };
+
+
     pub static ref BUILTIN_SETTINGS: RwLock<HashMap<String, String>> = Default::default();
 }
 
@@ -98,7 +99,6 @@ lazy_static::lazy_static! {
         ("x11 headless", LINK_HEADLESS_LINUX_SUPPORT),
         ]);
 }
-
 
 const NUM_CHARS: &[char] = &['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
